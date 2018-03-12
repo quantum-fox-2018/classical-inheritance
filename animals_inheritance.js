@@ -5,6 +5,7 @@ class Animals{
         this._name = name || 'Animal No Name'
         this._num_legs = num_legs || 2
         this._is_warm_blooded = status || true
+        this._superpower = new SuperPower(this._name)
     }
 
 }
@@ -51,6 +52,20 @@ class Chicken extends Animals{
         super(name)
         this._name = name
         this._unique = unique
+    }
+}
+
+class SuperPower{
+    constructor(animal_name){
+        this._name = animal_name
+    }
+
+    use_laser_vision(){
+        return `${this._name} using laser vision!`
+    }
+
+    be_invisible(){
+        return `${this._name} being invisible!`        
     }
 }
 
