@@ -11,9 +11,8 @@ class Animals{
 }
 
 class Frog extends Animals{
-    constructor(name, status){
-        super(name, status)
-        this._name = 'Frog'
+    constructor(name){
+        super(name)
         this._is_warm_blooded = false
     }
 }
@@ -21,7 +20,6 @@ class Frog extends Animals{
 class Bat extends Animals{
     constructor(name){
         super(name)
-        this._name = 'Bat'
         this._unique = this.unique()
     }
 
@@ -33,14 +31,13 @@ class Bat extends Animals{
 class Chimpanzee extends Animals{
     constructor(name){
         super(name)
-        this._name = 'Simpanse'
+        this._color = 'Grey and White'
     }
 }
 
 class Fox extends Animals{
     constructor(name, num_legs){
         super(name, num_legs)
-        this._name = 'Kyubi'
         this._num_legs = 4
         this._unique = 'I Have 9 Tails'
 
@@ -57,15 +54,15 @@ class Chicken extends Animals{
 
 class SuperPower{
     constructor(animal_name){
-        this._name = animal_name
+        this._animal_name = animal_name
     }
 
     use_laser_vision(){
-        return `${this._name} using laser vision!`
+        return `${this._animal_name} using laser vision!`
     }
 
     be_invisible(){
-        return `${this._name} being invisible!`        
+        return `${this._animal_name} being invisible!`        
     }
 }
 
@@ -73,17 +70,21 @@ let animal = new Animals()
 console.log(animal);
 
 
-let frog = new Frog()
+let frog = new Frog('Frog')
 console.log(frog);
 
-let bat = new Bat()
+let bat = new Bat('Kalong')
 console.log(bat);
+console.log(bat._superpower.be_invisible());
 
-let simpanse = new Chimpanzee()
+
+let simpanse = new Chimpanzee('Simpanse')
 console.log(simpanse);
 
-let fox = new Fox()
+let fox = new Fox('Kyubi')
 console.log(fox);
+console.log(fox._superpower.use_laser_vision());
+
 
 let chick = new Chicken('Ayam Kampung', 'Bertelur')
 console.log(chick);
